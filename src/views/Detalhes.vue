@@ -105,83 +105,213 @@ onMounted(() => {
 
 
 <style scoped>
-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 50px;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px 50px; /* menos padding lateral para celular */
+  min-height: 100vh;
+  box-sizing: border-box;
 }
-.detalhes{
-    display: flex;
-    flex-direction: row;
-    padding: 10px 200px 10px 350px;
-    justify-content: center;
-    font-family: "Playfair Display SC", serif;
+
+.detalhes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  font-family: "Playfair Display SC", serif;
+  padding: 10px 20px;
+  box-sizing: border-box;
 }
-.img{
-    margin-right: 50px;
-    display: flex;
-    align-items: center;
+
+.img {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  max-width: 320px;
 }
-.croche{
-    display: flex;
+
+.img img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.txt {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.nome {
+  font-size: 48px;
+  margin: 0 0 10px;
+}
+
+.preco {
+  color: red;
+  font-size: 22px;
+  font-family: "Lato", sans-serif;
+  margin: 0 0 8px;
+}
+
+.estoque {
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  margin: 0 0 16px;
+}
+
+.estoque .disponivel {
+  color: green;
+  font-weight: bold;
+}
+
+.estoque .indisponivel {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+.descricao {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.adicionar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.botao {
+  border: 1px solid black;
+  padding: 12px 8px;
+  width: 158px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  user-select: none;
+}
+
+.botao button {
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.botao button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.addCar {
+  border: 1px solid black;
+  padding: 12px 8px;
+  background-color: #FA77AB;
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.addCar:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: #f9b9c4;
+}
+
+.addCar:hover:not(:disabled) {
+  background-color: #f05895;
+}
+
+/* Responsividade */
+
+/* Tablets e abaixo */
+@media (max-width: 900px) {
+  .detalhes {
     flex-direction: column;
+    padding: 10px;
+    gap: 30px;
   }
-  .nome{
-    font-size: 60px;
+
+  .img {
+    max-width: 100%;
   }
-  .txt{
-    display: flex;
-    flex-direction: column;
+
+  .nome {
+    font-size: 38px;
+    text-align: center;
   }
-  .preco{
-    color: red
-    ;
+
+  .preco {
     font-size: 20px;
-    font-family: "Lato", sans-serif;
+    text-align: center;
   }
-  .estoque{
-    font-size: 10px;
-    font-family: "Lato", sans-serif;
-  }
-  .adicionar{
-    display: flex;
-    flex-direction: row;
 
+  .estoque {
+    text-align: center;
   }
-  .botao{
-    border: 1px solid black;
-    padding: 12px 8px;
-    width: 158px;
-    height: 20px;
-    gap: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+  .descricao {
+    text-align: center;
+  }
+
+  .adicionar {
     justify-content: center;
   }
-  .descricao{
-    font-family: "Lato", sans-serif;
-  }
-  .adicionar button{
-    border: none;
-  }
-  .addCar{
-    border: 1px solid black;
-    padding: 12px 8px;
-    width: 300px;
-    height: 48px;
-    background-color: #FA77AB;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    gap: 40px;
-  }
- 
-  .addCar:hover{
-    background-color: #f05895;
 
+  .botao {
+    width: 120px;
+    font-size: 18px;
   }
+
+  .botao button {
+    font-size: 20px;
+  }
+
+  .addCar {
+    width: 100%;
+    max-width: 320px;
+    font-size: 18px;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .nome {
+    font-size: 28px;
+  }
+
+  .preco {
+    font-size: 18px;
+  }
+
+  .botao {
+    width: 100px;
+    padding: 8px 6px;
+  }
+
+  .botao button {
+    font-size: 18px;
+  }
+
+  .addCar {
+    font-size: 16px;
+    width: 100%;
+  }
+}
 </style>

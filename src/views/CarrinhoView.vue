@@ -82,85 +82,164 @@ carrinho.value = carrinhoSalvo
 })
 </script>
 <style lang="css" scoped>
-.main{
-    display: flex;
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.itens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.item-carrinho {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  background-color: #fff9fb;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+}
+
+.img img {
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.detalhes {
+  flex: 1;
+  min-width: 0;
+}
+
+.detalhes h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.detalhes p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+}
+
+.total button {
+  background: none;
+  border: none;
+  color: #fa77ab;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.resumo {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 0;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #fff0f6;
+  box-sizing: border-box;
+}
+
+.divPreco {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.resumo button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #fa77ab;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.resumo button:hover {
+  background-color: #f05895;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .item-carrinho {
     flex-direction: column;
-
-    padding-bottom: 50px;
-}
-.itens{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.item-carrinho{
-    font-family: "Lato", sans-serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 500px;
-}
-.total{
-    display: flex;
-    flex-direction: row;
-}
-.total button{
-    border: 0px;
-    text-decoration: underline;
-    background-color: white;
-
-}
-.product{
-    display: flex ;
-    flex-direction: row;
-    align-items: center;
-}
-.pedidos{
-    display: flex;
-    flex-direction: column;
-}
-.img{
-    margin-right: 20px;
-
-}
-
-.detalhes h3{
-    font-size: 30px;
-}
-.detalhes p{
-   font-size: 15px;
-}
-.resumo{
-    border: 1px solid black;
-    height: 98px;
-}
-.divPreco{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-family: "Lato", sans-serif;
-}
-.resumo button{
-    border: 0px;
-    padding: 12px 8px;
-    width: 300px;
-    height: 48px;
-    background-color: #FA77AB;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    gap: 40px;
-    font-family: "Lato", sans-serif;
+    align-items: flex-start;
   }
- 
-.resumo button:hover{
 
-        background-color: #f05895;
-    
-   
-} 
+  .product {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .resumo {
+    width: 100%;
+  }
+
+  .img img {
+    max-width: 60px;
+  }
+
+  .detalhes h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 10px;
+  }
+
+  .item-carrinho {
+    padding: 10px;
+  }
+
+  .resumo button {
+    font-size: 14px;
+  }
+
+  .divPreco {
+    font-size: 14px;
+  }
+}
 
 </style>
