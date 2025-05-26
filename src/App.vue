@@ -6,7 +6,7 @@ import FooterCompo from './components/FooterCompo.vue';
 </script>
 
 <template>
-   <header-compo/>
+   <HeaderCompo/>
     <RouterView />
     <FooterCompo/>
 
