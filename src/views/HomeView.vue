@@ -146,5 +146,52 @@ function irParaDetalhes(boneca) {
   .indisponivel {
     color: red;
   }  
+  .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 90vw;
+  max-width: 300px;
+  margin: 8px 0;
+}
+
+/* Ajuste do banner para telas pequenas */
+.banner img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* Texto centralizado e espaçamento */
+.crochesas p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.2rem 0;
+}
+
+/* Media query para telas maiores (tablet e desktop) */
+@media (min-width: 768px) {
+  .product {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    margin: 12px;
+  }
+
+  .banner {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .crochesas p {
+    font-size: 1.5rem;
+  }
+}
 
 </style>
