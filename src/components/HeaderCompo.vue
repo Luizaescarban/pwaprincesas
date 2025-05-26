@@ -1,5 +1,16 @@
 <script setup>
- 
+ import {  useRouter } from 'vue-router';
+
+
+const router = useRouter();
+
+const voltar = () => {
+  router.push('/'); 
+};
+
+const irParaCarrinho = () => {
+  router.push('/carrinho'); 
+};
 </script>
 <template>
   <header class="header">
@@ -7,8 +18,8 @@
           <p>Discount 20% For New Member, ONLY FOR TODAY!!</p>
         </div>
         <div class="nav">
-          <div class="logo"><img @click="voltar" src="/logo.png" alt="" /></div>
-          <div class="car"><img @click="irParaCarrinho" src="/car.png" alt="" /></div>
+          <div class="logo"><img @click="voltar" src="/src/assets/images/logo.png" alt="" /></div>
+          <div class="car"><img @click="irParaCarrinho" src="/src/assets/images/car.png" alt="" /></div>
         </div>
       </header>
 </template>
