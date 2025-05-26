@@ -23,7 +23,7 @@ export default defineConfig({
             purpose: 'any',
           },
           {
-            src: 'pwa-512x512.png',
+            src: 'pwa-512x51.png',
             sizes: '512x51',
             type: 'image/png',
             purpose: 'maskable',
