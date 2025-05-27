@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  flex-wrap: wrap; /* Permite quebrar linha */
+  flex-wrap: wrap; 
   box-sizing: border-box;
 }
 
@@ -91,7 +91,6 @@
   font-weight: 700;
 }
 
-/* Responsividade */
 
 @media (max-width: 768px) {
   .footer {
